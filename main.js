@@ -75,6 +75,7 @@ function depositarMonto() {
         <p>${user} no puedes depositar un valor negativo</p>
       </div>
     `;
+    
   } else if (monto + saldo <= montoMaximo) {
     if (user === usuarioVerificado && monto != "") {
       aprobado = true;
