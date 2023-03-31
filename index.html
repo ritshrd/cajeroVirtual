@@ -1,30 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="main.js"></script>    
-    <link rel="stylesheet" href="style.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="main.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css"rel="stylesheet"integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp"crossorigin="anonymous"
+    />
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js" integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" crossorigin="anonymous"></script>
-    <title>Document</title>
-</head>
+    <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
+    <title>Cajero</title>
+  </head>
 
-<style>body{background: rgb(131, 131, 131);}</style>
-<body>
-    <div id="login">
-        <input type="text" id="userInput" placeholder="Enter text" value="Gera">
-        <input type="password" id="passInput" placeholder="Enter password" value="123">
-        <!--<input type="button" id="verificarButton" value="verificar">-->
-        <button onclick="guardarData()">Verificar2</button>
+  <style>
+    body {
+      background: rgb(231, 231, 231);
+    }
+  </style>
+  <body >
+    
+    <div class="grid text-center">
+      
+        <div class="g-col-lg-4 g-col-sm-2"></div>
+        <div class="g-col-lg-4 g-col-sm-8 g-col-10">
+            <div class="card">
+                <div class="card-header">
+                    <h2>Cajero virtual</h2>
+                </div>
+                    <div class="login">
+                    <div class="g-col12 p-2"><input type="text" id="userInput" class="form-control" placeholder="Enter text" value="Gera"/></div>
+                    <div class="g-col12 p-2"><input type="password" id="passInput" class="form-control" placeholder="Enter password" value="123"/></div>
+                </div>
+                
+                <div class="grid text-center">
+                    <div id="pantalla" class="g-col-12 p-4"></div>
+                </div>    
+                    <div id="botones" class="g-col-3"></div>
+                    <div class="g-col12 p-2">
+                        <button class="btn btn-primary btn-lg" onclick="validarUsuario(usuario)">Ingresar</button>
+                        <button class="btn btn-warning btn-lg" onclick="salir()">Salir</button>
+            
+            </div>
+        </div>
+        <div class="g-col-lg-4 g-col-sm-2"></div>
+      
     </div>
-        <div id="pantalla"></div>
-        <div id="botones"></div>
 
-    
-    
 
-</body>
+
+  </body>
 </html>
-
