@@ -68,7 +68,14 @@ function depositarMonto() {
 
   let aprobado = false;
 
-  if (monto + saldo <= montoMaximo) {
+  if (monto < 0 || monto === "" || isNaN(monto)) {
+    let nodoMensajeMontoInvalido = document.querySelector("#pantalla");
+    nodoMensajeMontoInvalido.innerHTML = `
+      <div class="alert alert-warning">
+        <p>${user} no puedes depositar un valor negativo</p>
+      </div>
+    `;
+  } else if (monto + saldo <= montoMaximo) {
     if (user === usuarioVerificado && monto != "") {
       aprobado = true;
       // Actualizar el saldo del usuario correspondiente en el arreglo "usuario"
@@ -114,7 +121,14 @@ function retirarMonto() {
   monto = parseFloat(document.getElementById("retiroInput").value);
   let aprobado = false;
 
-  if (saldo - monto >= montoMinimo) {
+  if (monto < 0 || monto === "" || isNaN(monto)) {
+    let nodoMensajeMontoInvalido = document.querySelector("#pantalla");
+    nodoMensajeMontoInvalido.innerHTML = `
+      <div class="alert alert-warning">
+        <p>${user} no puedes retirar un valor negativo</p>
+      </div>
+    `;
+  } else if (saldo - monto >= montoMinimo) {
     if (user === usuarioVerificado && monto != "") {
       aprobado = true;
       // Actualizar el saldo del usuario correspondiente en el arreglo "usuario"
@@ -224,7 +238,7 @@ function pantallaRetirarMonto() {
   nodoIngresarMonto.innerHTML = `
                                 <div>
                                     <p>${user} cuanto dinero deseas retirar?</p>
-                                    <input type="number" class="form-control" id="retiroInput" placeholder="Monto" value="0">
+                                    <input type="number" class="form-control" id="retiroInput" placeholder="Monto" value="">
                                     <div class="p-3"><button class="btn btn-danger " onclick="retirarMonto()">Retirar</button></div>
             
                                 </div>
